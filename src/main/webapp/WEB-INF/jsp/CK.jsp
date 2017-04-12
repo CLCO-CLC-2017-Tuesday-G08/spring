@@ -1,64 +1,23 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 		pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
-	
+	<script type="text/javascript" src="/resources/ckeditor/ckeditor.js"></script>
 	<t:template>
-		<jsp:body>		
-					</tr><tr valign="top">
-			<td><div id="pnCenter">
-				<div id="pnCenterDisplay" style="width:692px;float:left">
-					<div id="indexMain" style="float:left;"><div>
-						<style>
-	</style>
-	<div id="main">
-	<div id="head">
-	</div>
-	<div id="head-link">
-	</div>
-	<div id="left">
-	</div>
-	<div id="content">
-	</div>
-	<div id="right">
-	</div>
-	<div id="footer">
-	</div>
-	</div>
-	
-	<script src="editor/ckeditor.js" language="javascript"></script>
-	
-					</div></div><div id="news" style="float:left;"><div>
-						<p class="MsoNormal" style="margin: 6pt 0cm 0.0001pt; text-align: justify;">
-	</p><table style="text-align: justify;">
-	 <!--  tbody -->
-	  <tbody>
-	
-					<div class="row">
-						<div class="form-group col-md-12">
-							<label class="col-md-3 control-lable" for="file">Description</label>
-							<div class="col-md-7">
-								<form:input type="text" path="description" id="description" class="form-control input-sm"/>
-							</div>
-							
-						</div>
-					</div>
-					<script type="text/javascript" language="javascript">
+		<jsp:body>
+	<form method="POST" modelAttribute="news" class="form-horizontal">
+			<h4>Title news</h2>		
+	<input type="text" path="title" id="title" name="title" value="${newlist.title}" class="form-control input-sm"/>
+	<h4>Content:</h2>		
+       <textarea class="ckeditor" path="Content" name="Content" cols="80" rows="10">
+            ${newlist.content}
+       </textarea>
+<input type="submit" value="commit" class="btn btn-primary btn-sm"/>
 
-CKEDITOR.replace( 'description' );
-
-</script> 
-			
-				
-</tbody>
-	    
-	     <!--  end tbody -->
-	</table>
-	<br>
-	<br>
-	<p></p>
-	
-					</div></div>
-				</div>
-			
-		</jsp:body>
-	</t:template>
+</form>
+<div class="alert alert-success lead">
+	    	${success}
+		</div>
+</jsp:body>
+</t:template>

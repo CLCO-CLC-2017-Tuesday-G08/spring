@@ -294,12 +294,12 @@
 								<div id="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu" class="RadMenu RadMenu_Green rmSized" style="height: 40px; z-index: 1; width: 100%;">
 										<ul class="rmRootGroup rmHorizontal">
 										<li class="rmItem ">
-												<a href="ck" class="rmLink rmRootLink">
+												<a href="newscontent" class="rmLink rmRootLink">
 													<span class="rmText">CKeditor</span>
 												</a>
 											</li>
 											<li class="rmItem rmFirst">
-												<a href="home" class="rmLink rmRootLink">
+												<a href="newscontent1" class="rmLink rmRootLink">
 													<span class="rmText">Home</span>
 												</a>
 											</li>
@@ -328,7 +328,7 @@
 												</div>
 											</li>
 											<li class="rmItem ">
-												<a href="call" class="rmLink rmRootLink">
+												<a href="newscontent2" class="rmLink rmRootLink">
 													<span class="rmText">Call for papers</span>
 												</a>
 											</li>
