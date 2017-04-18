@@ -333,12 +333,12 @@
 												</a>
 											</li>
 											<li class="rmItem">
-												<a href="sub" class="rmLink rmRootLink">
+												<a href="newscontent3" class="rmLink rmRootLink">
 													<span class="rmText">Submission</span>
 												</a>
 											</li>
 											<li class="rmItem ">
-												<a href="r" class="rmLink rmRootLink">
+												<a href="newscontent4" class="rmLink rmRootLink">
 													<span class="rmText">Registration</span>
 												</a>
 											</li>
@@ -357,8 +357,9 @@
 													<span class="rmText">Venue & Hotel</span>
 												</a>
 											</li>
+											
 											<li class="rmItem rmLast" style="z-index: 0;">
-												<a href="Portlets/MenuRad/#" class="rmLink rmRootLink">
+												<a href="Portlets/MenuRad/inde" class="rmLink rmRootLink">
 													<span class="rmText rmExpandDown">More</span>
 												</a>
 												<div class="rmSlide" style="visibility: visible; height: 102px; width: 139px; display: none; overflow: hidden; left: 0px; top: 40px; z-index: 10;">
@@ -381,6 +382,8 @@
 														</ul>
 												</div>
 											</li>
+											
+											
 											
 										</ul><input id="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu_ClientState" name="ctl06_portlet_800886a8-ccb5-40dd-813a-2c02ac0d2e92_RadMenu_ClientState" type="hidden" />
 								</div>

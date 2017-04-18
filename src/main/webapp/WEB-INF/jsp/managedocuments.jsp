@@ -25,7 +25,6 @@
 	</div>
 	</div>
 	
-	<script src="editor/ckeditor.js" language="javascript"></script>
 	
 					</div></div><div id="news" style="float:left;"><div>
 						<p class="MsoNormal" style="margin: 6pt 0cm 0.0001pt; text-align: justify;">
@@ -89,12 +88,7 @@
 							
 						</div>
 					</div>
-					<script type="text/javascript" language="javascript">
-
-CKEDITOR.replace( 'description' );
-
-</script> 
-			
+					
 					<div class="row">
 						<div class="form-actions floatRight">
 							<input type="submit" value="Upload" class="btn btn-primary btn-sm">

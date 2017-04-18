@@ -93,9 +93,9 @@ public class FileUploadController {
     }   */
     
  //home
-   @GetMapping("/home")
+   @GetMapping("/managedocument")
    public String showHome(Model model) throws IOException {
-       return "jsp/Default71a5";
+       return "jsp/managedocuments";
    }
    
   //Venue_Hotel
@@ -126,6 +126,10 @@ public class FileUploadController {
    @GetMapping("/k")
    public String showKey(Model model) throws IOException {
        return "jsp/index547f";
+   }
+   @GetMapping("/mana")
+   public String showManage(Model model) throws IOException {
+       return "jsp/managedocuments";
    }
  
 
@@ -251,6 +255,57 @@ public class FileUploadController {
 			//return "success";
 			return "jsp/indexb404";
 		}
+		@RequestMapping(value = { "/newscontent3" }, method = RequestMethod.GET)
+		public String newsContent3(ModelMap model) {
+			Newcontent newlist = new Newcontent();
+			model.addAttribute("newlist", newlist);
+			List<Newcontent> news = newsService.findAllNews();
+	 		model.addAttribute("news", news);
+			model.addAttribute("edit", false);
+			return "jsp/indexd478";
+		}
+	   
+		@RequestMapping(value = { "/newscontent3" }, method = RequestMethod.POST)
+		public String saveNews3(Newcontent news, BindingResult result,
+				ModelMap model) {
+
+			if (result.hasErrors()) {
+				return "jsp/index";
+			}
+
+			newsService.saveNews(news);
+			
+			model.addAttribute("news", news);
+			model.addAttribute("success", " comit successfully");
+			//return "success";
+			return "jsp/indexd478";
+		}
+		@RequestMapping(value = { "/newscontent4" }, method = RequestMethod.GET)
+		public String newsContent4(ModelMap model) {
+			Newcontent newlist = new Newcontent();
+			model.addAttribute("newlist", newlist);
+			List<Newcontent> news = newsService.findAllNews();
+	 		model.addAttribute("news", news);
+			model.addAttribute("edit", false);
+			return "jsp/indexa8ef";
+		}
+	   
+		@RequestMapping(value = { "/newscontent4" }, method = RequestMethod.POST)
+		public String saveNews4(Newcontent news, BindingResult result,
+				ModelMap model) {
+
+			if (result.hasErrors()) {
+				return "jsp/index";
+			}
+
+			newsService.saveNews(news);
+			
+			model.addAttribute("news", news);
+			model.addAttribute("success", " comit successfully");
+			//return "success";
+			return "jsp/indexa8ef";
+		}
+
 	@RequestMapping(value = { "/edit-news-{Id}" }, method = RequestMethod.GET)
 	public String editNews(@PathVariable String Id, ModelMap model) {
 		Integer idnews = Integer.parseInt(Id);
