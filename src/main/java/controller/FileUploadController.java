@@ -431,7 +431,7 @@ public class FileUploadController {
 	
 
 	
-	@RequestMapping(value = { "/add-document-{userId}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/add-document-{docId}" }, method = RequestMethod.GET)
 	public String addDocuments(@PathVariable int userId, ModelMap model) {
 		User user = userService.findById(userId);
 		model.addAttribute("user", user);
@@ -464,7 +464,7 @@ public class FileUploadController {
 		return "redirect:/add-document-"+userId;
 	}
 
-	@RequestMapping(value = { "/add-document-{userId}" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/add-document-{dId}" }, method = RequestMethod.POST)
 	public String uploadDocument(@Valid FileBucket fileBucket, BindingResult result, ModelMap model, @PathVariable int userId) throws IOException{
 		
 		if (result.hasErrors()) {

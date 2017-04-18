@@ -9,7 +9,6 @@
  				 <c:if test="${news.id == 3 }">					
 							${news.content}			
 				</c:if>			 
-		
 			</c:forEach>	
 	
 		</jsp:body>

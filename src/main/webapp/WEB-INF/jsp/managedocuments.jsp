@@ -54,8 +54,8 @@
 							<td>${doc.name}</td>
 							<td>${doc.type}</td>
 							<td>${doc.description}</td>
-							<td><a href="<c:url value='/download-document-${user.id}-${doc.id}' />" class="btn btn-success custom-width">download</a></td>
-							<td><a href="<c:url value='/delete-document-${user.id}-${doc.id}' />" class="btn btn-danger custom-width">delete</a></td>
+							<td><a href="<c:url value='/download-document-${doc.id}' />" class="btn btn-success custom-width">download</a></td>
+							<td><a href="<c:url value='/delete-document-${doc.id}' />" class="btn btn-danger custom-width">delete</a></td>
 						</tr>
 					</c:forEach>
 		    		</tbody>
@@ -98,9 +98,6 @@
 				</form:form>
 				</div>
 		</div>
-	 	<div class="well">
-	 		Go to <a href="<c:url value='/list' />">Users List</a>
-	 	</div>
    	</div>
 </tbody>
 	    
