@@ -30,7 +30,6 @@ import model.UserDocument;
 import util.FileValidator;
 import model.User;
 import model.Newcontent;
-
 import hello.StorageFileNotFoundException;
 import hello.StorageService;
 
@@ -71,69 +70,24 @@ public class FileUploadController {
 	}
     
 
-//    @GetMapping("/")
-//    public String listUploadedFiles(Model model) throws IOException {
-//
-////        model.addAttribute("files", storageService
-////                .loadAll()
-////                .map(path ->
-////                        MvcUriComponentsBuilder
-////                                .fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
-////                                .build().toString())
-////                .collect(Collectors.toList()));
-//
-//        //return "jsp/test";
-//    
-//		return "jsp/index";
-//    }
+    @GetMapping("/up")
+    public String listUploaded(Model model) throws IOException {
+    	  model.addAttribute("files", storageService
+                  .loadAll()
+                  .map(path ->
+                          MvcUriComponentsBuilder
+                                  .fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
+                                  .build().toString())
+                  .collect(Collectors.toList()));
+
+          return "thymeleaf/uploadForm";
+    }
    
 /*    @GetMapping("/sub")
     public String showHcmute(Model model) throws IOException {
         return "hcmute";
     }   */
-    
- //home
-   @GetMapping("/managedocument")
-   public String showHome(Model model) throws IOException {
-       return "jsp/managedocuments";
-   }
-   
-  //Venue_Hotel
-   @GetMapping("/venue")
-   public String showVenue(Model model) throws IOException {
-       return "jsp/Default26a6";
-   }
-   
- //Call
-   @GetMapping("/call")
-   public String showCall(Model model) throws IOException {
-       return "jsp/indexb404";
-   }
-   
- //submission
-   @GetMapping("/sub")
-   public String showSubmission(Model model) throws IOException {
-       return "jsp/indexd478";
-   }
-   
-   //regis
-   @GetMapping("/r")
-   public String showRegis(Model model) throws IOException {
-       return "jsp/indexa8ef";
-   }
-   
- //keynote
-   @GetMapping("/k")
-   public String showKey(Model model) throws IOException {
-       return "jsp/index547f";
-   }
-   @GetMapping("/mana")
-   public String showManage(Model model) throws IOException {
-       return "jsp/managedocuments";
-   }
- 
-
-    
+       
      @GetMapping("/files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
@@ -144,11 +98,7 @@ public class FileUploadController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+file.getFilename()+"\"")
                 .body(file);
     }
-    @GetMapping("/search")
-    public String handleFileSearch(@RequestParam("query") String query, Model model){
-    	model.addAttribute("driveAPISearchData", storageService.driveAPISearch(query));    	
-    	return "test";
-    }
+   
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {

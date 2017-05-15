@@ -20,9 +20,7 @@ public interface StorageService {
     Path load(String filename);
 
     Resource loadAsResource(String filename);
-    
-    List<File> driveAPISearch(String query);
-    
+        
     void deleteAll();
 
 }

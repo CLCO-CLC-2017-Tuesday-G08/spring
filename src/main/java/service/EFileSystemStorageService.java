@@ -24,8 +24,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
 
-//@Service
-@Qualifier("fileSys")
+@Service
 public class EFileSystemStorageService implements StorageService {
 
     private final Path rootLocation;
@@ -80,24 +79,13 @@ public class EFileSystemStorageService implements StorageService {
             throw new StorageFileNotFoundException("Could not read file: " + filename, e);
         }
     }
+
     @Override
     public void deleteAll() {
         FileSystemUtils.deleteRecursively(rootLocation.toFile());
     }
 
     @Override
-	public List<File> driveAPISearch(String query) {
-		// TODO Auto-generated method stub
-		try {
-			return DriveService.Search(DriveService.getDriveService(), query);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@Override
     public void init() {
         try {
             Files.createDirectory(rootLocation);

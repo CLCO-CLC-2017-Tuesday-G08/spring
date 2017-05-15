@@ -6,7 +6,7 @@
 	<t:template>
 		<jsp:body>					
 	<c:forEach items="${news}" var="news">
- 				 <c:if test="${news.id == 3 }">					
+ 				 <c:if test="${news.id == 1 }">					
 							${news.content}			
 				</c:if>			 
 			</c:forEach>	
